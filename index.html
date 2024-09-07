@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <nav class="nav-bar">
+        <div class="nav-container">
+            <div class="search-bar">
+                <input type="text" class="city-input" placeholder="Search City Name">
+                <button class="search-button js-search-button"><i class="fas fa-search"></i></button>
+            </div>
+            <div class="location">
+                <i class="fa-solid fa-location-dot icon "></i>
+                <input type="text" value="Pune, IN" class="curr-location" disabled>
+            </div>
+        </div>
+    </nav>
+    <div class="card-container">
+        <div class="card">
+            <div class="card-heading">
+                <p>Current Weather</p>
+            </div>
+            <div class="temperature-info">
+                <img id="weather-image" src="http://openweathermap.org/img/wn/04d.png" alt="weather-image">
+                <p class="curr-temperature"><span id="curr-temp-count">20</span><sup>&degC</sup></p>
+            </div>
+            <p class="weather-desc js-weather-dec">Bursty Cloud</p>
+        </div>
+        <div class="mini-card-container">
+            <div class="min-card">
+                <p>Min. Temperature</p>
+                <span class="temp-value min-temp">57</span>
+            </div>
+            <div class="min-card">
+                <p>Max. Temperature</p>
+                <span class="temp-value max-temp">55</span>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>
