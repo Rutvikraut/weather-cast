@@ -1,5 +1,3 @@
-import apikey from "./config.js"
-
 let currentLocation=document.querySelector('.curr-location')
 let tempCount=document.querySelector('#curr-temp-count')
 let weatherDescription=document.querySelector('.js-weather-dec')
@@ -9,14 +7,16 @@ let maxTemp=document.querySelector('.max-temp')
 let humidityCount=document.querySelector('.humidity-count')
 let humidityBarValue=document.querySelector('.humidity-value')
 
-const api=apikey
-
 document.querySelector('.js-search-button').addEventListener('click',getWeatherDetails)
 async function getWeatherDetails(){
     const location=document.querySelector('.city-input').value
     console.log(isNaN(location))
     try{
         if(location && isNaN(location)){
+            const keyResponse = await fetch('/api/get-api-key');
+            const keyData = await keyResponse.json();
+            const api = keyData.apiKey;
+
             const response=await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${api}`)
             const data= await response.json()
             // console.log(data)
