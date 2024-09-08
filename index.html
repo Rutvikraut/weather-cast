@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,33 +31,66 @@
             </div>
             <div class="temperature-info">
                 <img id="weather-image" src="http://openweathermap.org/img/wn/04d.png" alt="weather-image">
-                <p class="curr-temperature"><span id="curr-temp-count">20</span><sup>&degC</sup></p>
+                <p class="curr-temperature"><span id="curr-temp-count">0</span><sup>&degC</sup></p>
             </div>
-            <p class="weather-desc js-weather-dec">Bursty Cloud</p>
+            <p class="weather-desc js-weather-dec"></p>
         </div>
         <div class="mini-card-container">
             <div class="min-card">
                 <p>Min. Temperature</p>
-                <span class="temp-value min-temp">57</span>
+                <span class="temp-value min-temp">0</span>
             </div>
             <div class="min-card">
                 <p>Max. Temperature</p>
-                <span class="temp-value max-temp">55</span>
+                <span class="temp-value max-temp">0</span>
             </div>
         </div>
-        <div class="card">
+        <div class="card humidity-card">
             <div class="card-heading">
                 <p> Relative Humidity</p>
             </div>
-            <div class="humidity-percentage">
-                <p class="humidity-count">50%</p>
+            <div class="humidity-info">
+                <div class="humidity-percentage">
+                    <p class="humidity-count">0%</p>
+                </div>
+                <div class="humidty-indicator">
+                    <div class="humidity-bar">
+                        <div class="humidity-value"></div>
+                    </div>
+                </div>
+                
             </div>
-            <div class="humidity-bar">
-                <div class="humidity-value"></div>
+            <div class="humidity-note">
+                <span>0 to 30% : <span id="blue">Blue</span></span>
+                <span>31 to 60% : <span id="green">Green</span></span>
+                <span>61 to 100% : <span id="red">Red</span></span>
+            </div>
+        </div>
+        <div class="card ">
+            <div class="card-heading">
+                <p>Wind Speed</p>
+            </div>
+                <div class="guage-wrapper">
+                    <div class="gauge">
+                        <div class="slice-colors">
+                          <div class="st slice-item"></div>
+                          <div class="st slice-item"></div>
+                          <div class="st slice-item"></div>
+                          <div class="st slice-item"></div>
+                          <div class="st slice-item"></div>
+                        </div>
+                        <div class="needle"></div>
+                        <div class="gauge-center">
+                            <p><span id="guage-value">80</span>km/hr</p>
+                        </div>
+                    </div>
             </div>
         </div>
         
     </div>
+    <div id='alert' class="alert">
+        
+    </div>
 </body>
-<script src="script.js"></script>
+<script src="script.js" type="module"></script>
 </html>
