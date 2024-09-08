@@ -71,7 +71,11 @@ function UpdateCurrentTemperature(tempObj){
 function UpdateWeatherDetails(weather){
     weatherDescription.innerText=(weather.description).toUpperCase()
     weatherImage.src=`http://openweathermap.org/img/wn/${weather.icon}.png`
-    document.body.style.backgroundImage=`url(images/${weather.icon}.jpg)`
+    const imageUrl = `images/${weather.icon}.jpg`;
+    preloadImage(imageUrl).then(() => {
+        // Once preloaded, set it as the background
+        document.body.style.backgroundImage = `url(${imageUrl})`;
+    });
 }
 
 function UpdateHumidity(tempObj){
@@ -89,4 +93,19 @@ function UpdateWindSpeed(speed){
     const maxSpeed = 100;
     const rotation = (speedInKmh / maxSpeed) * 180;
     needle.style.transform=`rotate(${rotation}deg)`
+}
+
+function preloadImage(url) {
+    return new Promise((resolve, reject) => {
+        const img = new Image();
+        img.src = url;
+
+        img.onload = () => {
+            resolve(url);
+        };
+
+        img.onerror = () => {
+            reject(new Error(`Failed to load image: ${url}`));
+        };
+    });
 }
