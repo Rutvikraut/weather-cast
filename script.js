@@ -19,7 +19,7 @@ async function getWeatherDetails(){
 
             const response=await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${api}`)
             const data= await response.json()
-            // console.log(data)
+            console.log(data)
             if(response.status=='200'){
                 UpdateWeatherDetails(data.weather[0])
                 UpdateCurrentTemperature(data.main)
